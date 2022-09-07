@@ -26,15 +26,11 @@ a:active {
 }
 
 h1 {
-    font-family: 'Noto Serif', Georgia, serif;
-    font-weight: 300;
-    margin: 0;
-}
-
-header {
-}
-
-header a {
+    font-size: 4.5rem;
+    font-weight: 700;
+    padding: 3rem;
+    color: red;
+    letter-spacing: 0.35em
 }
 
 .container {
@@ -43,7 +39,7 @@ header a {
     grid-auto-rows: minmax(250px, auto);
     grid-gap: 1rem;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 2000px;
     padding: 1rem;
 }
 
@@ -106,57 +102,3 @@ header a {
 .card-content:hover {
     background-color: rgb(74, 73, 73);
 }
-
-
-
-
-
-
-
-
-/* 
-.details-container {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.details-image {
-    padding: 1rem;
-    width: 200px;
-}
-
-.details {
-    padding: 1rem;
-    width: 350px;
-}
-
-.details h2 {
-    font-size: 2rem;
-    font-weight: 200;
-    margin-bottom: 0;
-}
-
-.details h3 {
-    font-family: 'Noto Serif', Georgia, serif;
-    font-style: italic;
-    font-weight: 200;
-    margin-top: 0;
-}
-
-.details h4 {
-    margin-bottom: 0;
-}
-
-.details p {
-    margin: 0;
-}
-
-.read-more {
-    background-color: black;
-    color: white;
-    display: inline-block;
-    margin: 1rem 0;
-    padding: 1rem;
-} */

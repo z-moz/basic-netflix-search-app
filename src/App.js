@@ -30,7 +30,7 @@ function App() {
     <>
       <div className="">
         <div className="">
-          <h1 className="">Search Netflix</h1>
+          <h1 className="title">Search Netflix</h1>
           <SearchTabs
             filterItem={filterItem}
             setItem={setItem}
