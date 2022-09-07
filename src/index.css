@@ -4,20 +4,25 @@
     box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
     margin: 0;
     font-family: 'Calibre', 'Helvetica', 'Arial', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    letter-spacing: .04em;
-    color: white;
+    font-size: 1rem !important; 
+    line-height: 1.25rem !important;
+    letter-spacing: .04em !important;
+    color: white !important;
     background: black;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+    color: white;
+    text-decoration: none;
 }
 
 h1 {
@@ -74,15 +79,15 @@ header a {
 
 .card-title {
     margin: 0.5rem 0;
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.5rem !important;
 }
 
 .card-info {
     margin: 0;
-    font-size: .875rem;
-    line-height: 1.15rem;
+    font-size: .875rem !important;
+    line-height: 1.15rem !important;
     -webkit-font-smoothing: subpixel-antialiased;
 }
 

@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function FilmList() {
-  const [films, setFilms] = useState([]);
-  useEffect(() => {
-    fetch("https://dolearning-cors-app.herokuapp.com/https://www.whats-on-netflix.com/wp-content/plugins/whats-on-netflix/json/movie.json")
-    .then(res => res.json())
-    .then((res) => {
-      setFilms(res)
-    })
-    .catch(err => console.log(err))
-  }, []);
+export default function FilmCard({ item }) {
   
   return (
     <section className="container">
-      {films.map((film, idx) => {
+      {item.map((film) => {
         return (
-          <div className="card" key={idx}>
+          <a href={`https://www.netflix.com/gb/title/${film.netflixid}`} key={film.netflixid} target="_blank" rel="noreferrer" >
+          <div className="card" key={film.id}>
             <div className="card-image">
               <img
-                src={film.image_landscape}
+                src={film.image_portrait}
                 alt={film.title}
               />
             </div>
@@ -34,9 +26,16 @@ export default function FilmList() {
               </p>
               <div className="card-description">
                 <p>{film.description}</p>
+                <p>{film.actors}</p>
+                <p>
+                  <span className="card-info-item">{film.language}</span>
+                  <span className="card-info-item">{film.imdb}</span>
+                  <span className="card-info-item">{film.rating}</span>
+                </p>
               </div>
             </div>
           </div>
+          </a>
         )
       })}
       
