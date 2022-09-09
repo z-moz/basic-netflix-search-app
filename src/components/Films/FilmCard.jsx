@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function FilmCard({ item }) {
   
@@ -6,8 +7,9 @@ export default function FilmCard({ item }) {
     <section className="container">
       {item.map((film) => {
         return (
-          <a href={`https://www.netflix.com/gb/title/${film.netflixid}`} key={film.netflixid} target="_blank" rel="noreferrer" >
-          <div className="card" key={film.id}>
+          // <a href={`https://www.netflix.com/gb/title/${film.netflixid}`} key={film.netflixid} target="_blank" rel="noreferrer" >
+          <Link to={`/details/${film.netflixid}`} key={film.netflixid} >
+          <div className="card">
             <div className="card-image">
               <img
                 src={film.image_portrait}
@@ -35,7 +37,8 @@ export default function FilmCard({ item }) {
               </div>
             </div>
           </div>
-          </a>
+          </Link>
+          // </a>
         )
       })}
       

@@ -1,20 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function SearchTabs({ filterItem, setItem, filterForTheseLanguages }) {
-
-  const [films, setFilm] = useState([]);
-  useEffect(() => {
-    fetch("https://zsussanna-api.fly.dev/api/movies")
-    .then(res => res.json())
-    .then((res) => {
-      setFilm(res)
-    })
-    .catch(err => console.log(err))
-  }, []);
-
+export default function SearchTabs({ filterItem, setItem, filterForTheseLanguages, films }) {
   return (
     <>
-      <div className="tablinks">
+      <div className="tab-links">
         {filterForTheseLanguages.map((language, idx) => {
           return (
             <button
@@ -34,6 +23,5 @@ export default function SearchTabs({ filterItem, setItem, filterForTheseLanguage
         </button>
       </div>
     </>
-
   );
 }

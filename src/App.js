@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import FilmCard from "./components/Films/FilmCard.jsx";
-import SearchTabs from "./components/SearchTabs";
+import SearchTabs from "./components/SearchTabs.jsx";
+import FilmDetails from "./components/Films/FilmDetails.jsx";
 
 function App() {
   const [films, setFilm] = useState([]);
@@ -9,6 +11,7 @@ function App() {
       .then((res) => res.json())
       .then((res) => {
         setFilm(res);
+        setItem(res);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -28,17 +31,33 @@ function App() {
 
   return (
     <>
-      <div className="">
-        <div className="">
-          <h1 className="title">Search Netflix</h1>
-          <SearchTabs
-            filterItem={filterItem}
-            setItem={setItem}
-            filterForTheseLanguages={filterForTheseLanguages}
+      <header>
+        <h1>
+          <a href="/">Search Netflix</a>
+        </h1>
+      </header>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <SearchTabs
+                  filterItem={filterItem}
+                  setItem={setItem}
+                  filterForTheseLanguages={filterForTheseLanguages}
+                  films={films}
+                />
+                <FilmCard item={item} />
+              </>
+            }
           />
-          <FilmCard item={item} />
-        </div>
-      </div>
+          <Route
+            path="/details/:filmID"
+            element={<FilmDetails films={films} />}
+          />
+        </Routes>
+      </main>
     </>
   );
 }
