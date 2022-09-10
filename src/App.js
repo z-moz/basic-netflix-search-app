@@ -22,12 +22,22 @@ function App() {
     ...new Set(films.map((film) => film.language)),
   ];
 
-  const filterItem = (curlang) => {
-    const newItem = films.filter((newFilm) => {
-      return newFilm.language === curlang;
-    });
+  const lang = ["Norwegian", "Swiss German"];
+  const cat = ["Drama", "Action, Comedy"];
+
+  const filterItem = () => {
+    const newItem = films
+      .filter((item) => lang.includes(item.language))
+      .filter((item) => cat.includes(item.category));
     setItem(newItem);
   };
+
+  // const filterItem = (lang) => {
+  //   const newItem = films.filter((newFilm) => {
+  //     return newFilm.language === lang;
+  //   });
+  //   setItem(newItem);
+  // };
 
   return (
     <>

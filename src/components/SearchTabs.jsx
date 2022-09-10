@@ -4,14 +4,14 @@ export default function SearchTabs({ filterItem, setItem, filterForTheseLanguage
   return (
     <>
       <div className="tab-links">
-        {filterForTheseLanguages.map((language, idx) => {
+        {filterForTheseLanguages.map((lang, idx) => {
           return (
             <button
               className="search-term"
-              onClick={() => filterItem(language)}
+              onClick={() => filterItem(lang)}
               key={idx}
             >
-              {language}
+              {lang}
             </button>
           );
         })}
