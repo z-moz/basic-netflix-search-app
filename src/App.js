@@ -7,7 +7,9 @@ import FilmDetails from "./components/Films/FilmDetails.jsx";
 function App() {
   const [films, setFilm] = useState([]);
   useEffect(() => {
-    fetch("https://zsussanna-api.fly.dev/api/movies")
+    fetch(
+      "https://www.whats-on-netflix.com/wp-content/plugins/whats-on-netflix/json/movie.json"
+    )
       .then((res) => res.json())
       .then((res) => {
         setFilm(res);
@@ -22,15 +24,9 @@ function App() {
     ...new Set(films.map((film) => film.language)),
   ];
 
-  const lang = ["Norwegian", "Swiss German"];
-  const cat = ["Drama", "Action, Comedy"];
-
-  const filterItem = () => {
-    const newItem = films
-      .filter((item) => lang.includes(item.language))
-      .filter((item) => cat.includes(item.category));
-    setItem(newItem);
-  };
+  const filterForTheseCategories = [
+    ...new Set(films.map((film) => film.category)),
+  ];
 
   // const filterItem = (lang) => {
   //   const newItem = films.filter((newFilm) => {
@@ -53,9 +49,8 @@ function App() {
             element={
               <>
                 <SearchTabs
-                  filterItem={filterItem}
-                  setItem={setItem}
                   filterForTheseLanguages={filterForTheseLanguages}
+                  filterForTheseCategories={filterForTheseCategories}
                   films={films}
                 />
                 <FilmCard item={item} />
