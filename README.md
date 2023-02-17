@@ -40,9 +40,10 @@ I am sharing this project as a learning experience and to show the improvement b
 
 ### Deployment link
 
-Project 2 is deployed here: [Netflix Advanced Search 1.0](https://euphonious-brigadeiros-3157ea.netlify.app/)
+Project 2 is deployed here: [Netflix Advanced Search 1.0](https://search-netflix.netlify.app/)
 
-Project 4 is deployed here: (TODO: add link)
+Project 4 is deployed here: [Netflix I'm not Chilled!](https://netflix-im-not-chilled.netlify.app/)
+
 
 ### Code Installation
 
@@ -237,4 +238,4 @@ There is a lot I wanted to improve on this app. First I wanted to gain a much be
 * Expand the search to tv shows as well.
 * Add pagination and infinite scrolling.
 
-I revisited this project in Project 4. I improved it a lot and implemented many of the above features. Project 4 is available here: (TODO: link)
+I revisited this project in Project 4. I improved it a lot and implemented many of the above features. Project 4 is available here: [Netflix I'm not Chilled!](https://netflix-im-not-chilled.netlify.app/)
